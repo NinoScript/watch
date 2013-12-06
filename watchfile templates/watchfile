@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Changed file name comes as argument
+file=$1
+
+# Do something for any kind of file
+echo "The file '$file' has changed."
+
+# Do something on a file by file basis
+case "${file##*.}" in
+  yaml) echo "$file : YAML file"         ;;
+coffee) echo "$file : CoffeeScript file" ;;
+     *) echo "$file : Unknown type"      ;;
+esac

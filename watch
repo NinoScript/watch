@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+# Arguments and parameters
+source_files=${@:-./src/*}
+watchfile=./watchfile.sh
+
+# Echo format utilities
+bold=`tput bold`
+normal=`tput sgr0`
+function print_title {
+	echo "${bold}==> $1${normal}"
+}
+
+# Make sure there is a "watchfile"
+if [ ! -f ${watchfile} ]; then
+	print_title Error
+	echo "There's no watchfile.sh in this directory, please make one:"
+	echo "    $ sh <(curl -L http://bit.ly/1d03JSL)"
+	exit 1
+fi
+
+# Make sure that there is no "notify" file
+if [ -f notify ]; then
+	print_title Error
+	echo 'A file named "notify" already exists, please remove it with:'
+	echo '    $ rm notify'
+	exit 2
+fi
+
+# What to do if interrupted (this script does not normally return)
+function clean_up {
+	echo # ^C in it's own line
+	print_title Aborting
+	echo Bye bye!
+	# Remove fifo if it's already there
+	rm -f notify
+	exit 0
+}
+trap clean_up SIGHUP SIGINT SIGTERM
+
+# Launch `entr' in fifo mode
+ls ${source_files} | entr +notify &
+
+# Wait for fifo creation in background entr process
+while [ ! -p notify ]; do true; done
+
+# Do stuff with changed file!
+print_title Watching!
+while read F; do
+	echo ${bold}Change detected in file:${normal} $F
+	${watchfile} $F
+	echo # File separator
+done < notify
