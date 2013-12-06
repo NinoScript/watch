@@ -42,7 +42,7 @@ trap clean_up SIGHUP SIGINT SIGTERM
 ls ${source_files} | entr +notify &
 
 # Wait for fifo creation in background entr process
-while [ ! -p notify ]; do true; done
+while [ ! -p notify ]; do ps -p $! >/dev/null || exit 1; done
 
 # Do stuff with changed file!
 print_title Watching!
