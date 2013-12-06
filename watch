@@ -15,7 +15,7 @@ function print_title {
 if [ ! -f ${watchfile} ]; then
 	print_title Error
 	echo "There's no ${watchfile} in this directory, please make one:"
-	echo "    $ sh <(curl -L http://bit.ly/1d03JSL)"
+	echo "    $ sh <(curl -L http://bit.ly/1hBp3Uy)"
 	exit 1
 fi
 
