@@ -51,7 +51,7 @@ Dependencies
 	
 	On other platforms you may want to use the official instructions
 	provided [here][entr-install], or check if there a package for
-	your favorite repository.
+	your favorite package manager.
 
 [entr-website]: http://entrproject.org
 [entr-install]: https://bitbucket.org/eradman/entr/
