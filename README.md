@@ -18,8 +18,9 @@ it automatically calls the "watchfile.sh" script.
 
 To stop watch, a nice `^C` will do.
 
-If no file is provided, it will look for all the files inside
-a folder named "src" in the current directory, i.e. `./src/*`
+If no file is provided, by default it will look for all the files
+that are directly inside a folder named "src" in the current directory,
+not counting directories nor following them i.e. `find ./src -depth 1 -type f`
 
 Install / Uninstall
 -------------------

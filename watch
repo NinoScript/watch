@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Arguments and parameters
-source_files=${@:-./src/*}
+source_files=${@:-`find ./src -depth 1 -type f`}
 watchfile=./watchfile.sh
 
 # Echo format utilities
@@ -14,7 +14,7 @@ function print_title {
 # Make sure there is a "watchfile"
 if [ ! -f ${watchfile} ]; then
 	print_title Error
-	echo "There's no watchfile.sh in this directory, please make one:"
+	echo "There's no ${watchfile} in this directory, please make one:"
 	echo "    $ sh <(curl -L http://bit.ly/1d03JSL)"
 	exit 1
 fi
