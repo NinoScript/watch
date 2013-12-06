@@ -27,7 +27,7 @@ Install / Uninstall
 
 You can use the easy install script:
 
-	$ sh <(curl http://bit.ly/18oJgEw -L)
+	$ sh <(curl http://bit.ly/1hBp3Uy -L)
 
 Or to install manually, please copy the **watch** script
 to somewhere in your *path* variable.
