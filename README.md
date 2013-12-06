@@ -51,9 +51,26 @@ Dependencies
 		brew install entr
 	
 	On other platforms you may want to use the official instructions
-	provided [here][entr-install], or check if there a package for
+	provided [here][entr-install], or check if there is a package for
 	your favorite package manager.
+	
+Special Thanks to
+-----------------
 
+* [Edward Alvarado][acedward],
+	for being my first beta tester.
+* [Eric][eradman-github] [Radman][eradman-bitbucket],
+	for making [entr][entr-website] and kindly submitting a patch.
+* [Mitch Tishmack][mitchty],
+	for making `entr` easy to install on Mac OS X.
+
+<!-- links -->
 [entr-website]: http://entrproject.org
 [entr-install]: https://bitbucket.org/eradman/entr/
 [ninoscript-resume]: https://github.com/NinoScript/resume
+
+<!-- people -->
+[acedward]: https://github.com/acedward
+[eradman-github]:    https://bitbucket.org/eradman
+[eradman-bitbucket]: https://github.com/eradman
+[mitchty]: https://github.com/mitchty
