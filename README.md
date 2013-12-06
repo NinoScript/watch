@@ -4,12 +4,22 @@ watch
 Runs a user defined "watchfile.sh" when files change,
 based on [entr][entr-website].
 
+I made this to automate the compiling and reloading the browser
+each time I make a change to an .yaml of .jade file, for my
+yaml-resume->html project [here][ninoscript-resume].
+
 Usage
 -----
 
 	$ watch [file ...]
 
-Watch stays open and if any of the provided files changes, it automatically calls the "watchfile.sh" script.
+Watch stays open and if any of the provided files changes,
+it automatically calls the "watchfile.sh" script.
+
+To stop watch, a nice `^C` will do.
+
+If no file is provided, it will look for all the files inside
+a folder named "src" in the current directory, i.e. `./src/`
 
 Install / Uninstall
 -------------------
@@ -32,7 +42,7 @@ And to uninstall simply remove it, like this:
 Dependencies
 ------------
 
-* entr, please install this manually.
+* [entr][entr-website], please install this manually.
 	
 	On Mac OS X:
 	
@@ -40,8 +50,9 @@ Dependencies
 		brew install entr
 	
 	On other platforms you may want to use the official instructions
-	provided [here][entr-install].
+	provided [here][entr-install], or check if there a package for
+	your favorite repository.
 
 [entr-website]: http://entrproject.org
 [entr-install]: https://bitbucket.org/eradman/entr/
-
+[ninoscript-resume]: https://github.com/NinoScript/resume
