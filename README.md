@@ -47,7 +47,6 @@ Dependencies
 	
 	On Mac OS X:
 	
-		brew tap mitchty/entr
 		brew install entr
 	
 	On other platforms you may want to use the official instructions
